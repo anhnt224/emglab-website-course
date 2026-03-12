@@ -11,6 +11,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-backkhoa: #821a07;
+  --radius-backkhoa: 32px;
 }
 
 .dark :root,
