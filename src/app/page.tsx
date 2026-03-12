@@ -7,7 +7,6 @@ export default function Home() {
 
   return (
     <div className="h-screen w-full bg-white dark:bg-black">
-      <ThemeToggle />
       <ul className="list-disc">
         {products.map((p) => (
           <li className="text-3xl font-bold text-red-700" key={p}>
