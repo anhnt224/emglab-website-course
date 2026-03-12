@@ -71,41 +71,38 @@ export default function Page() {
       <div className="flex flex-col items-center">
         <div className="text-3xl font-semibold">Clients</div>
         <div className="grid w-full grid-cols-1 gap-16 p-7 xl:grid-cols-3 xl:px-24">
-          {users.map((user) => (
-            <UserCard key={user.name} user={user} />
+          {users.map((user, index) => (
+            <div
+              className="w-full border-2 border-[#FFD285] bg-[#FFFCF5] p-7"
+              key={index}
+            >
+              <p className="text-xl font-semibold">{user.title}</p>
+
+              <div className="mt-20 flex gap-5">
+                <Image
+                  src={user.image}
+                  alt="anh"
+                  width={50}
+                  height={50}
+                  className="h-12 w-12"
+                />
+
+                <div className="">
+                  <div className="flex gap-1">
+                    {Array(user.rating)
+                      .fill(0)
+                      .map((i) => (
+                        <div key={i}>★</div>
+                      ))}
+                  </div>
+                  <div>
+                    {user.name}, <br />
+                    {user.company}
+                  </div>
+                </div>
+              </div>
+            </div>
           ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function UserCard({ user }: { user: User }) {
-  return (
-    <div className="w-full border-2 border-[#FFD285] bg-[#FFFCF5] p-7">
-      <p className="text-xl font-semibold">{user.title}</p>
-
-      <div className="mt-20 flex gap-5">
-        <Image
-          src={user.image}
-          alt="anh"
-          width={50}
-          height={50}
-          className="h-12 w-12"
-        />
-
-        <div className="">
-          <div className="flex gap-1">
-            {Array(user.rating)
-              .fill(0)
-              .map((i) => (
-                <div key={i}>★</div>
-              ))}
-          </div>
-          <div>
-            {user.name}, <br />
-            {user.company}
-          </div>
         </div>
       </div>
     </div>
